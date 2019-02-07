@@ -1,0 +1,12 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const expenseSchema = new Schema({
+    _id: mongoose.Types.ObjectId, 
+    description: String,
+    amount: Number,
+    month: String,
+    year: Number,
+});
+
+module.exports = mongoose.model('Expense', expenseSchema);
