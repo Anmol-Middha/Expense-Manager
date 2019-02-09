@@ -13,12 +13,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('dev'));
 
-const db = require("../config/key").mongoURI;
-mongoose.connect(db, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true});
 
 const expenseRoute = require('./routes/expense.js');
+const userRoutes = require('./routes/user');
 
 app.use('/', expenseRoute);
+app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
     const error = new Error("Not Found");

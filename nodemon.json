@@ -1,0 +1,7 @@
+{
+    "env": {
+            "__DEV__": "true",
+            "TOKEN_KEY": "simplesecret",
+            "MONGO_URL": "mongodb://amids2827:amids2827@ds047666.mlab.com:47666/expensemanager"
+        }
+}
